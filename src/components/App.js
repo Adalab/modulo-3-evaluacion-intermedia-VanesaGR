@@ -13,7 +13,7 @@ function App() {
       return eachCharacter.quote.toLowerCase().includes(search.toLowerCase())
     })
     .filter((eachCharacter)=>{ //filtrar por el select de personaje
-      return eachCharacter.character.toLowerCase().includes(select);
+      return eachCharacter.character.toLowerCase().includes(select.toLowerCase());
     })
     .map((eachCharacter,i) => (
       <li key={i}>
