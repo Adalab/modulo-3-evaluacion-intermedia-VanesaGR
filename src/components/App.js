@@ -1,5 +1,5 @@
 import '../styles/App.scss';
-import data from '../data/data .json' //para llamar a los datos
+import data from '../data/data.json' //para llamar a los datos
 import {useState} from 'react';
 
 function App() {
@@ -18,17 +18,17 @@ function App() {
     .map((eachCharacter,i) => (
       <li key={i}>
         <p>{eachCharacter.quote}</p>
-        <p>{eachCharacter.character}</p>
+        <p className='character'>{eachCharacter.character}</p>
       </li>
     ))
      
   }
 
-  const handleFilterInput=(ev) =>{
+  const handleFilterInput=(ev) =>{ //funcion manejadora del input de busqueda
     setSearch(ev.target.value);
   }
 
-  const handleFilterCharacter=(ev) =>{
+  const handleFilterCharacter=(ev) =>{ //funcion manejadora del select
     setSelect(ev.target.value);
   }  
 
@@ -56,7 +56,7 @@ function App() {
             id='searchCharacter'
             onChange={handleFilterCharacter} //cuando cambia, filtra por personaje
           >
-            <option value='todos'>--Escoge el personaje--</option>
+            <option value=''>--Escoge el personaje--</option>
             <option value='Rachel'>Rachel</option>
             <option value='Chandler'>Chandler</option>
             <option value='Ross'>Ross</option>
@@ -64,15 +64,14 @@ function App() {
             <option value='Phoebe'>Phoebe</option>
             <option value='Joey'>Joey</option>            
           </select>
-        </form>
-        <span className="mnsj"></span>
+        </form>        
       </header>
 
     {/* pinta la lista de las frases */}
      <ul className='list'>{renderList()}</ul> 
 
       <main className='main'>
-        <form>
+        <form className='add'>
           <label htmlFor='quote'>¿Alguna otra?</label>
           <input
             className='quote-input'
