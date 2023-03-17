@@ -2,5 +2,25 @@
 
 *{
     background-color: lightgrey;
+    margin: 1rem;
 }
 
+.form{
+    border-bottom: 4px solid green;
+    padding-bottom: 1rem;
+}
+
+.input, .select{
+    margin-left: 4rem;
+}
+
+.title{
+    color: green;
+    text-align: center;
+}
+
+.list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}

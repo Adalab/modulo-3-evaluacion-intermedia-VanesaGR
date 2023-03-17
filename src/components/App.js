@@ -30,12 +30,9 @@ function App() {
 
   const handleFilterCharacter=(ev) =>{
     setSelect(ev.target.value);
-      // .filter((eachCharacter)=>eachCharacter.character===select);
-      // .filter(eachCharacter=>(filter)==='all')?true: eachCharacter.character===filter;
-  }
-  
+  }  
 
-  const handleSubmit = (ev)=>{
+  const handleSubmit = (ev)=>{ //evita que se refresque la pagina
     ev.preventDefault();
   }
 
@@ -43,23 +40,21 @@ function App() {
   return (
     <div className="container">
       <header className='header'>
-        <h1 className='header-title'>Frases de Friends</h1>
-        <form onSubmit={handleSubmit}>
+        <h1 className='header-title title'>Frases de Friends</h1>
+        <form onSubmit={handleSubmit} className="form">
           <label htmlFor='searchQuote'>Buscar frase</label>
           <input
-            className='searchQuote-input'
+            className='searchQuote-input input'
             type='search'
             name='searchQuote'
             placeholder='Introduce una frase'
             onChange={handleFilterInput} //cuando se introduce una palabra, filtra por ahi
-            // value={}
-          />
+          /><br/><br/>
           <label htmlFor='searchCharacter'>Personaje</label>
-          <select
+          <select className='select'
             name='searchCharacter'
             id='searchCharacter'
             onChange={handleFilterCharacter} //cuando cambia, filtra por personaje
-            // value={}
           >
             <option value='todos'>--Escoge el personaje--</option>
             <option value='Rachel'>Rachel</option>
@@ -73,7 +68,8 @@ function App() {
         <span className="mnsj"></span>
       </header>
 
-     <ul>{renderList()}</ul>
+    {/* pinta la lista de las frases */}
+     <ul className='list'>{renderList()}</ul> 
 
       <main className='main'>
         <form>
